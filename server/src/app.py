@@ -70,15 +70,15 @@ def generatePassword():
         letters = string.ascii_letters
         result_str = ''.join(random.choice(letters) for i in range(length))
 
-        return json.dumps({"passowrd": result_str})   
+        return json.dumps({"password": result_str})   
 
     requestParced = request.get_json()
 
     print(request.data)
     print(requestParced)
     #length = int(requestParced["length"])
-    passwordGenerated = getRandomPassword(requestParced["length"])
-
+    #passwordGenerated = getRandomPassword(requestParced["length"])
+    passwordGenerated = getRandomPassword(15)
     return passwordGenerated
 
 @APP.route("/sobre", methods = ["GET"])

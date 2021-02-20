@@ -1,16 +1,28 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import {  Link  } from "react-router-dom"
 import "./Styles.css"
 import API from "../../services/API"
 
 export default function CreatePassword(props) {
 
-    useEffect(() => {
-        fetch("/senhas").then(response => {response.json().then(data => {
-            console.log(data)
-        })})
-    }, [])
+    const [password, setPassword] = useState("")
 
+    function getPassword() {
+        API.get("gerar-senha").then(response => {
+            
+            setPassword(response.data.password)
+
+        })
+    }
+
+    // Copia a senha para a área de transferencia
+    function copyToClipboard() {
+
+        console.log(password)
+        navigator.clipboard.writeText(password)
+
+    }
+    
     return (
         <div id="page-home">
             <header className="Header d-none d-sm-flex flex-column">
@@ -25,9 +37,9 @@ export default function CreatePassword(props) {
             </header>
             <main>
                 <div id="password-div">
-                    <input type="text" name="" id="password-output" />
-                    <button id="password-button1">Gerar senha</button>
-                    <button id="password-button2">Copiar senha</button>
+                    <input type="text" name="" id="password-output" value={password}  readOnly={true}/>
+                    <button id="password-button1" onClick={() => {getPassword()}}>Gerar senha</button>
+                    <button id="password-button2" onClick={() => {copyToClipboard()}}>Copiar senha</button>
                 </div>
             </main>
         </div>
