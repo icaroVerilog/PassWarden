@@ -16,10 +16,13 @@ const CustomSlider = withStyles({
 
     root: {
         color: "#111927",
-        height: 5,
-        padding: "300px 0",
-        left: "350px",
+
+        position: "relative",
+        top: "75%",
+
+        left: "25%",
         width: `${sliderWidth}px`,
+        height: "10px",
     },
     track: {
         height: 4,
@@ -30,9 +33,14 @@ const CustomSlider = withStyles({
     },
 
     valueLabel: {
-        left: 'calc(-50% + 4px)',
+        left: 'calc(-50% + 1px)',
+        top: -22,
+        '& *': {
+            background: 'transparent',
+            color: '#000',
+        },
     },
-
+    
     rail: {
 
         height: 5,
@@ -54,6 +62,7 @@ const CustomSlider = withStyles({
         },
         color: "#111927",
     },
+
 })(Slider);
 
 
@@ -68,7 +77,6 @@ export default function Home(props){
             <Header></Header>
             <div id="main">
                 <div id="password-generator">
-
                     <CustomSlider 
                         valueLabelDisplay="auto"
                         defaultValue={4}
@@ -77,7 +85,7 @@ export default function Home(props){
                         step={1}
                         marks
                         min={4}
-                        max={15}        
+                        max={15}     
                     />
                 </div>
             </div>
