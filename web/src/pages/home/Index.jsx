@@ -1,30 +1,87 @@
-import React from "react"
-import {  Link  } from "react-router-dom"
-import hacker from "../../assets/IMG.png"
-import "./Styles.css"
+import React from "react";
+
+import Slider from '@material-ui/core/Slider';
+import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
+
+import Header from "../components/header/Header";
+import Footer from "../components/footer/Footer";
+
+import "./Styles.css";
+
+
+const sliderWidth = 700;
+
+const CustomSlider = withStyles({
+
+    root: {
+        color: "#111927",
+        height: 5,
+        padding: "300px 0",
+        left: "350px",
+        width: `${sliderWidth}px`,
+    },
+    track: {
+        height: 4,
+        borderRadius: 2,
+        color: "#111927",
+
+        width: `${sliderWidth}px`,
+    },
+
+    valueLabel: {
+        left: 'calc(-50% + 4px)',
+    },
+
+    rail: {
+
+        height: 5,
+        color: "#111927",
+        width: `${sliderWidth}px`,
+
+    },
+
+    thumb: {
+        height: 20,
+        width: 20,
+        backgroundColor: "#fff",
+        border: "1px solid currentColor",
+        marginTop: -9,
+        marginLeft: -11,
+        boxShadow: "#ebebeb 0 2px 2px",
+        "&:focus, &:hover, &$active": {
+            boxShadow: "#ccc 0 2px 3px 1px",
+        },
+        color: "#111927",
+    },
+})(Slider);
+
+
+function handleSliderValue(value){
+    console.log(value);
+}
 
 
 export default function Home(props){
     return (
-        <div id="page-home">
-            <header className="Header d-none d-sm-flex flex-column">
-                <h1 id="main-text">W4rd3n</h1>
-                <h2 id="slogan-text">organizador e gerador de senhas</h2>
-                <Link to="/gerar-senha" id="generate-password-link">
-                    Gerar senha
-                </Link>
-                <Link to="/senhas" id="passwords-link">
-                    Senhas
-                </Link>
-                <Link to="/sobre" id="about-link">
-                    Sobre
-                </Link>
-            </header>
-            <main>
-                <h1 id="explain-text">Uma senha forte é o segredo para manter seus dados seguros.</h1>
-                <h2 id="explain-text2">Gere e armazede suas senhas de forma prática e segura</h2>
-                <img src={hacker} alt="" id="backgroud-img"/>
-            </main>
-        </div>
+        <div>
+            <Header></Header>
+            <div id="main">
+                <div id="password-generator">
+
+                    <CustomSlider 
+                        valueLabelDisplay="auto"
+                        defaultValue={4}
+                        aria-labelledby="discrete-slider"
+                        getAriaValueText={handleSliderValue}
+                        step={1}
+                        marks
+                        min={4}
+                        max={15}        
+                    />
+                </div>
+            </div>
+            <Footer></Footer>
+        </div>      
     )
 }

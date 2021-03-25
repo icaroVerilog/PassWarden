@@ -1,100 +1,18 @@
-header.Header {
-    background: linear-gradient(135deg, #181818 0%, #282828 100%);
-    padding: 0px 20px;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 100px;
+#main {
 
-    box-shadow:
-        2px 0 10px 0 rgba(0, 0, 0, 1),
-        2px 0 15px 0 rgba(0, 0, 0, 0.09);
-
-}
-
-#page-home {
+    width: 100%;
     height: 100vh;
-    width: 1294px;
-    background-color: #F0F0F5;
+    background-color:#141D2B;
+
 }
 
-#main-text {
-    width: 200px;
+#password-generator {
+    background-color:aliceblue;
+
+
+    width: 100%;
+    height: 50%;
 
     position: relative;
-    top: -15px;
-    left: 50px;
-
-    color: #009c86;
-
-    font-family: Bungee Inline;
-    font-size: 45px;
-}
-
-#slogan-text {
-    color: #009c86;
-    font-size: 10px;
-    font-family: Bungee Inline;
-    position: relative;
-    top: -40px;
-    left: 50px;
-}
-
-#generate-password-link {
-    color: #009c86;
-    position: relative;
-    top: -94px;
-    left: 700px;
-    font-family: Bungee Inline; 
-
-    text-decoration: none;
-}
-
-#passwords-link {
-    color: #009c86;
-    position: relative;
-    top: -94px;
-    left: 750px;
-    font-family: Bungee Inline; 
-
-    text-decoration: none;
-
-}
-
-#about-link {
-    color: #009c86;
-    position: relative;
-    top: -94px;
-    left: 800px;
-    font-family: Bungee Inline; 
-
-    text-decoration: none;
-}
-
-#backgroud-img {
-    position: relative;
-    left: 80px;
-    top: 30px;
-
-}
-
-#explain-text {
-    color: linear-gradient(135deg, #181818 50%, #282828);
-    font-family: Bungee Inline;
-    font-size: 35px;
-    width: 500px;
-    height: 20px;
-    position: absolute;
-    left: 725px;
-    top: 225px;
-}
-
-#explain-text2 {
-    color: #009c86;
-    font-family: Bungee Inline;
-    font-size: 35px;
-    width: 500px;
-    height: 20px;
-    position: absolute;
-    left: 725px;
-    top: 345px;
+    top: 20%;
 }

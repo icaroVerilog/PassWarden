@@ -1,4 +1,4 @@
-import { Route, BrowserRouter} from "react-router-dom"
+import { Route, BrowserRouter, Redirect} from "react-router-dom"
 import React from "react"
 
 import Home from "./pages/home/Index"
@@ -11,6 +11,8 @@ export default function Routes(props) {
             <Route component={Home} path="/" exact={true}/>
             <Route component={CreatePassword} path="/gerar-senha"/>
             <Route component={About} path="/sobre"/>
+            
+            <Redirect from="*" to="/"/>
         </BrowserRouter>
     )
 }
