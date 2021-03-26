@@ -1,16 +1,17 @@
-import React from "react";
-
-import Slider from '@material-ui/core/Slider';
-import TextField from '@material-ui/core/TextField';
-import { withStyles } from '@material-ui/core/styles';
-
+import React, { useState } from "react";
+import API from "../../services/API"
 import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 
+import Hacker from "../../assets/hacker.jpg"
 import "./Styles.css";
 
 
-const sliderWidth = 700;
+import Slider from '@material-ui/core/Slider';
+import { withStyles } from '@material-ui/core/styles';
+import InsertDriveFileOutlined from '@material-ui/icons/InsertDriveFileOutlined';
+import RefreshIcon from '@material-ui/icons/Refresh';
+
 
 const CustomSlider = withStyles({
 
@@ -18,10 +19,10 @@ const CustomSlider = withStyles({
         color: "#111927",
 
         position: "relative",
-        top: "75%",
+        top: "50%",
+        left: "50%",
 
-        left: "25%",
-        width: `${sliderWidth}px`,
+        width: "20%",
         height: "10px",
     },
     track: {
@@ -29,7 +30,8 @@ const CustomSlider = withStyles({
         borderRadius: 2,
         color: "#111927",
 
-        width: `${sliderWidth}px`,
+        width: "20%",
+        height: "5px",
     },
 
     valueLabel: {
@@ -43,9 +45,9 @@ const CustomSlider = withStyles({
     
     rail: {
 
-        height: 5,
+        height: "5px",
         color: "#111927",
-        width: `${sliderWidth}px`,
+        width: "100%",
 
     },
 
@@ -54,7 +56,7 @@ const CustomSlider = withStyles({
         width: 20,
         backgroundColor: "#fff",
         border: "1px solid currentColor",
-        marginTop: -9,
+        marginTop: -8,
         marginLeft: -11,
         boxShadow: "#ebebeb 0 2px 2px",
         "&:focus, &:hover, &$active": {
@@ -72,11 +74,40 @@ function handleSliderValue(value){
 
 
 export default function Home(props){
+
+    const [password, setPassword] = useState("")
+
+    function getPassword() {
+        API.get("gerar-senha").then(response => {
+            
+            setPassword(response.data.password)
+
+        })
+    }
+
+    // Copia a senha para a área de transferencia
+    function copyToClipboard() {
+
+        console.log(password)
+        navigator.clipboard.writeText(password)
+
+    }
+
     return (
         <div>
             <Header></Header>
             <div id="main">
+                <div id="introduce-text-div">
+                    <p id="introduce-text"> 
+                        Gere senhas confiáveis de maneira rápida
+                    </p>                                                
+                </div>
                 <div id="password-generator">
+                    <div id="output-box-div">
+                        <input id="output-box" type="text" readOnly={true} value={password}/>
+                        <InsertDriveFileOutlined id="output-box-icon" style={{ fontSize: 50 }} onClick={() => {copyToClipboard()}}/>
+                        <RefreshIcon id="output-box-icon2" style={{ fontSize:57 }} onClick={() => {getPassword()}}/>
+                    </div>
                     <CustomSlider 
                         valueLabelDisplay="auto"
                         defaultValue={4}
@@ -88,6 +119,9 @@ export default function Home(props){
                         max={15}     
                     />
                 </div>
+            </div>
+            <div id="informations">
+                <img id="hacker-img" src={Hacker}></img>
             </div>
             <Footer></Footer>
         </div>      
