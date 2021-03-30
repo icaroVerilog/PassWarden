@@ -42,7 +42,7 @@ def usuario():
 
     requestParsed = request.get_json()
 
-    password = str(requestParsed["password"])
+    password = str(requestParsed["user_password"])
     username = str(requestParsed["username"])
     email = str(requestParsed["email"])
 
@@ -50,20 +50,20 @@ def usuario():
 
 
 
-    connection = sqlite3.connect("../database/passwordsDatabase.sqlite")
+    connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
     CUR = connection.cursor()
 
-    CUR.execute(""" 
-            CREATE TABLE IF NOT EXISTS "users" (
-                "user_ID"	    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-                "username"      TEXT NOT NULL UNIQUE,
-                "email"         TEXT NOT NULL UNIQUE,
-                "password"	    TEXT NOT NULL
-            );
-    """)
+    # CUR.execute(""" 
+    #         CREATE TABLE IF NOT EXISTS "users" (
+    #             "user_ID"	    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+    #             "username"      TEXT NOT NULL UNIQUE,
+    #             "email"         TEXT NOT NULL UNIQUE,
+    #             "password"	    TEXT NOT NULL
+    #         );
+    # """)
 
     try:
-        CUR.execute("INSERT INTO users (username, email, password) VALUES (?,?,?)",
+        CUR.execute("INSERT INTO users (username, email, user_password) VALUES (?,?,?)",
                     [username, email, hashed_password])
 
         connection.commit()
@@ -82,7 +82,7 @@ def login():
     request_username = str(requestParsed["username"])
     request_password = str(requestParsed["password"])
 
-    connection = sqlite3.connect("../database/passwordsDatabase.sqlite")
+    connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
     CUR = connection.cursor()
 
     try:
@@ -129,21 +129,22 @@ def password():
 
         #CONVERTENDO A VARIAVEL REQUESTPARSED PARA STRING, PORQUE INT NÃO É ITERAVEL
         password = str(requestParsed["password"])
+        description = str(requestParsed["description"])
 
         #hashedPassword = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
-        connection = sqlite3.connect("../database/passwordsDatabase.sqlite")
+        connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
         CUR = connection.cursor()
 
-        CUR.execute(""" 
-                CREATE TABLE IF NOT EXISTS "passwords" (
-                    "password_ID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-                    "user_ID"	    INTEGER NOT NULL,
-                    "password"	    TEXT NOT NULL
-                );
-        """)
+        # CUR.execute(""" 
+        #         CREATE TABLE IF NOT EXISTS "passwords" (
+        #             "password_ID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+        #             "user_ID"	    INTEGER NOT NULL,
+        #             "password"	    TEXT NOT NULL
+        #         );
+        # """)
 
-        CUR.execute("INSERT INTO passwords (password) VALUES (?)", [password])
+        CUR.execute("INSERT INTO passwords (user_ID ,password, description) VALUES (?,?,?)", [1, password, description])
         connection.commit()
         connection.close()
 
@@ -153,17 +154,21 @@ def password():
 
     elif (request.method == "GET"):
 
-        connection = sqlite3.connect("../database/passwordsDatabase.sqlite")
+        connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
         CUR = connection.cursor()
 
-        CUR.execute("SELECT * FROM passwords")
+        CUR.execute("SELECT * FROM passwords INNER JOIN users ON  passwords.user_ID = users.user_ID")
         DATA = CUR.fetchall()
 
+        TESTE = DATA[0]
 
-        return json.dumps({"message": "success", "data": DATA})
+
+
+        return json.dumps({"message": "success", "data": TESTE})
 
 @APP.route("/gerar-senha", methods = ["GET"])
 def generatePassword():
+    
     def getRandomPassword(length):
         letters = string.ascii_letters
         result_str = ''.join(random.choice(letters) for i in range(length))
@@ -178,6 +183,7 @@ def generatePassword():
     #passwordGenerated = getRandomPassword(requestParced["length"])
     passwordGenerated = getRandomPassword(15)
     return passwordGenerated
+
 
 @APP.route("/sobre", methods = ["GET"])
 def about():
