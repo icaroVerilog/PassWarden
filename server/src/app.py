@@ -5,6 +5,7 @@ from flask_jwt_extended import JWTManager
 from flask_jwt_extended import jwt_required
 from flask_jwt_extended import create_access_token
 from flask_jwt_extended import verify_jwt_in_request
+
 import sqlite3
 import random
 import string
@@ -103,6 +104,7 @@ def login():
             access_token = create_access_token(identity = id)
 
             return jsonify({
+                "ID": id,
                 "access_token": access_token,
                 "message": "correct password",
             }), 200
@@ -124,27 +126,20 @@ def login():
 @jwt_required()
 
 def password():
+    
     if (request.method == "POST"):
         requestParsed = request.get_json()
 
         #CONVERTENDO A VARIAVEL REQUESTPARSED PARA STRING, PORQUE INT NÃO É ITERAVEL
+        user_id = str(requestParsed["user_id"]);
         password = str(requestParsed["password"])
         description = str(requestParsed["description"])
 
-        #hashedPassword = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
 
         connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
         CUR = connection.cursor()
 
-        # CUR.execute(""" 
-        #         CREATE TABLE IF NOT EXISTS "passwords" (
-        #             "password_ID"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-        #             "user_ID"	    INTEGER NOT NULL,
-        #             "password"	    TEXT NOT NULL
-        #         );
-        # """)
-
-        CUR.execute("INSERT INTO passwords (user_ID ,password, description) VALUES (?,?,?)", [1, password, description])
+        CUR.execute("INSERT INTO passwords (user_ID ,password, description) VALUES (?,?,?)", [user_id, password, description])
         connection.commit()
         connection.close()
 
@@ -154,21 +149,29 @@ def password():
 
     elif (request.method == "GET"):
 
+        requestParsed = request.get_json()
+        username = requestParsed["username"]
+  
         connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
         CUR = connection.cursor()
 
-        CUR.execute("SELECT * FROM passwords INNER JOIN users ON  passwords.user_ID = users.user_ID")
+        CUR.execute("""
+                    SELECT * FROM passwords 
+                    INNER JOIN users ON passwords.user_ID = users.user_ID
+                    WHERE username = (?)
+                    """, [username]
+                    )
+
         DATA = CUR.fetchall()
+        connection.commit()
+        connection.close()
 
-        TESTE = DATA[0]
 
-
-
-        return json.dumps({"message": "success", "data": TESTE})
-
+        return json.dumps({"message": "success", "data": DATA})
+        
 @APP.route("/gerar-senha", methods = ["GET"])
 def generatePassword():
-    
+
     def getRandomPassword(length):
         letters = string.ascii_letters
         result_str = ''.join(random.choice(letters) for i in range(length))
