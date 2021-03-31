@@ -6,7 +6,9 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import { withStyles } from '@material-ui/core/styles';
 import Bitwarden from "../../assets/Bitwarden.png"
+
 import "./Styles.css"
+
 
 const SubmitButton = withStyles({
     root: {
@@ -31,8 +33,6 @@ const SubmitButton = withStyles({
       },
     },
   })(Button);
-
-
 
 const CssTextField = withStyles({
     root: {
@@ -84,7 +84,7 @@ export default function Register(props) {
     const [email, setEmail] = useState("");
 
     return (
-        <div id="register-main">
+        <div id="register-main" >
             <Link to="/">
                 <img src={Bitwarden} id="main-link"/>
             </Link>
