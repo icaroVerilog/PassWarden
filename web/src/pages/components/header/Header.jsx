@@ -12,7 +12,7 @@ export default function Header(props){
             <Link to="/" id="header-text">BIT<span id="a">WARDEN</span></Link>
             <Link to="/sobre" id="about" className="header-links">S<span id="a">OBRE</span></Link>
             <Link to="/" id="login" className="header-links">LOG<span id="a">IN</span></Link>
-            <Link to="/" id="register" className="header-links">R<span id="a">EGISTER</span></Link>
+            <Link to="/register" id="register" className="header-links">R<span id="a">EGISTER</span></Link>
         </div>
 
     )
