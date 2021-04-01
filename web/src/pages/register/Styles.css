@@ -9,9 +9,9 @@
 
 #register-div {
 
-    position: relative;
+    position: absolute;
     left: 28%;
-    top: 10%;
+    top: 25%;
 
     width: 45%;
     height: 65%;
@@ -38,7 +38,7 @@
 
 #main-link {
 
-    position: relative;
+    position: absolute;
     left: 40%;
     top: 5%;
 
