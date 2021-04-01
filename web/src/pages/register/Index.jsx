@@ -79,11 +79,37 @@ const CssTextField = withStyles({
 
 export default function Register(props) {
 
-    // #A4B1CD
 
-    const [password, setPassword] = useState("");
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
+    const [data, setData] = useState({
+
+        username: "",
+        user_password: "",
+        email: ""
+
+    });
+
+    
+    function handleChange(event){
+
+        const { name, value } = event.target; //Pegando o valor e o nome do input que chamar a função
+
+        setData({ ...data, [name]: value})
+
+    }
+
+
+    function handleSubmit(event){
+
+        event.preventDefault();
+
+        API.post("http://localhost:5005/cadastro", data).then(response => {
+
+            console.log(response.data)
+
+        })
+    }
+
+    //console.log(data)
 
     return (
         <div id="register-main" >
@@ -91,13 +117,15 @@ export default function Register(props) {
             <Link to="/">
                 <img src={Bitwarden} id="main-link"/>
             </Link>
-            <form id="register-div">
+            <form id="register-div" onSubmit={handleSubmit}>
                 <Link></Link>
                 <CssTextField
                     label="USERNAME"
                     variant="outlined"
                     id="custom-css-outlined-input"
                     className="inputs"
+                    name="username"
+                    onChange={event => handleChange(event)}
                 />
 
                 <CssTextField
@@ -105,6 +133,8 @@ export default function Register(props) {
                     variant="outlined"
                     id="custom-css-outlined-input"
                     className="inputs"
+                    name="user_password"
+                    onChange={event => handleChange(event)}
                 />
 
                 <CssTextField
@@ -112,9 +142,11 @@ export default function Register(props) {
                     variant="outlined"
                     id="custom-css-outlined-input"
                     className="inputs"
+                    onChange={event => handleChange(event)}
+                    name="email"
                 />
 
-                <SubmitButton id="submit-button">Register</SubmitButton>
+                <SubmitButton type="submit" id="submit-button">Register</SubmitButton>
                 
             </form>
         </div>

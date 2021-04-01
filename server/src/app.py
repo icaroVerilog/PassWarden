@@ -42,9 +42,13 @@ def home():
 def usuario():
 
     requestParsed = request.get_json()
+    
+    print("############################")
+    print(requestParsed)
+    print("############################")
 
-    password = str(requestParsed["user_password"])
     username = str(requestParsed["username"])
+    password = str(requestParsed["user_password"])
     email = str(requestParsed["email"])
 
     hashed_password = sha256_crypt.hash(password)
