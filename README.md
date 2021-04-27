@@ -6,7 +6,7 @@
 
 <div>
 
-O BITwarden é um projeto **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. Atualmente em desenvolvimento
+### O BITwarden é um projeto **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. Atualmente em desenvolvimento
 
 </div>
 
