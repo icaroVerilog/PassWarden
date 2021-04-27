@@ -2,11 +2,8 @@
   <img height="180em" src="https://github.com/IcaroM-CdC/Password-generator/blob/master/web/src/assets/Bitwarden.png" 
 </h1>
 
-<h3 align="center">
-
 O BITwarden é um projeto **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. Atualmente em desenvolvimento
 
-</h3>
 
 <div align=left>
   
