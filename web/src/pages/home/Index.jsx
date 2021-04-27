@@ -16,66 +16,70 @@ import RefreshIcon from '@material-ui/icons/Refresh';
 const CustomSlider = withStyles({
 
     root: {
-        color: "#111927",
+        color: "#F0F8FF",
 
         position: "relative",
         top: "50%",
-        left: "50%",
-
-        width: "20%",
+        left: "28%",
+        width: "45%",
         height: "10px",
     },
     track: {
         height: 4,
         borderRadius: 2,
-        color: "#111927",
+        color: "#F0F8FF",
 
         width: "20%",
         height: "5px",
     },
-
+    mark: {
+        backgroundColor: '#bfbfbf',
+        height: 5,
+        width: 4,
+    },
+    markActive: {
+        opacity: 1,
+        backgroundColor: "#141D2B",
+        height: 5,
+        width: 4,
+    },
     valueLabel: {
         left: 'calc(-50% + 1px)',
-        top: -22,
+        top: -50,
+        fontSize: 15,
         '& *': {
             background: 'transparent',
-            color: '#000',
+            color: '#F0F8FF',
         },
-    },
-    
+    },    
     rail: {
 
         height: "5px",
-        color: "#111927",
+        color: "#F0F8FF",
         width: "100%",
 
     },
-
     thumb: {
         height: 20,
         width: 20,
-        backgroundColor: "#fff",
+        backgroundColor: "#9FEF00",
         border: "1px solid currentColor",
         marginTop: -8,
         marginLeft: -11,
-        boxShadow: "#ebebeb 0 2px 2px",
-        "&:focus, &:hover, &$active": {
-            boxShadow: "#ccc 0 2px 3px 1px",
-        },
-        color: "#111927",
+        color: "#9FEF00",
     },
 
 })(Slider);
 
 
-function handleSliderValue(value){
-    console.log(value);
-}
-
-
 export default function Home(props){
 
     const [password, setPassword] = useState("")
+    const [passwordLenght, setPasswordLenght] = useState(4)
+
+    function handleSliderValue(value){
+        
+    }
 
     function getPassword() {
         API.get("gerar-senha").then(response => {
@@ -105,8 +109,10 @@ export default function Home(props){
                 <div id="password-generator">
                     <div id="output-box-div">
                         <input id="output-box" type="text" readOnly={true} value={password}/>
-                        <InsertDriveFileOutlined id="output-box-icon" style={{ fontSize: 50 }} onClick={() => {copyToClipboard()}}/>
-                        <RefreshIcon id="output-box-icon2" style={{ fontSize:57 }} onClick={() => {getPassword()}}/>
+                        <div id="output-box-icons">
+                            <InsertDriveFileOutlined style={{ fontSize: 50 }} onClick={() => {copyToClipboard()}}/>
+                            <RefreshIcon style={{ fontSize:57 }} onClick={() => {getPassword()}}/>
+                        </div>     
                     </div>
                     <CustomSlider 
                         valueLabelDisplay="auto"
