@@ -8,15 +8,18 @@
 
 ### O BITwarden é um projeto **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. Atualmente em desenvolvimento
 
+
 <br>
+<br>
+<br>
+<br>
+
 <img height="500em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-main-page.png" />
+
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
+
 <img height="500em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-login.png" />
 
 </div>
