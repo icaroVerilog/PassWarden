@@ -14,13 +14,13 @@
 <br>
 <br>
 
-<img height="500em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-main-page.png" />
+<img height="450em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-main-page.png" />
 
 <br>
 <br>
 <br>
 
-<img height="500em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-login.png" />
+<img height="450em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-login.png" />
 
 </div>
 
