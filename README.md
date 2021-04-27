@@ -4,9 +4,12 @@
 
 <h3 align="center">
 
-O BITwarden **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. Atualmente em desenvolvimento
+O BITwarden é um projeto **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. Atualmente em desenvolvimento
 
 </h3>
+
+<div align=left>
+  
 
 ## Tecnologias
 
@@ -19,3 +22,4 @@ O BITwarden **Open Source** desenvolvido com o intuito de permitir que o usuári
 #### FrontEnd ([React](https://github.com/facebook/react))
 
 - 
+<div/>
