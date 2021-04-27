@@ -2,10 +2,11 @@
   <img height="180em" src="https://github.com/IcaroM-CdC/Password-generator/blob/master/web/src/assets/Bitwarden.png" 
 </h1>
 
-## Objetivos
+<h3 align="center">
 
-O BITwarden foi desenvolvido para aprimorar minhas habilidades em deselvolvimento web
+O BITwarden **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. Atualmente em desenvolvimento
 
+</h3>
 
 ## Tecnologias
 
