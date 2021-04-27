@@ -14,6 +14,7 @@
 <br>
 <br>
 
+<h3 align=center> Tela principal <h3/>
 <img height="450em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-main-page.png" />
 
 <br>
