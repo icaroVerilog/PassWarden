@@ -14,13 +14,14 @@
 <br>
 <br>
 
-<h3 align=center> Tela principal <h3/>
+### Tela principal
 <img height="450em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-main-page.png" />
 
 <br>
 <br>
 <br>
 
+### Tela de registro
 <img height="450em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-login.png" />
 
 </div>
