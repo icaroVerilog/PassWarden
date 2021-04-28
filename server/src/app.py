@@ -58,15 +58,6 @@ def usuario():
     connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
     CUR = connection.cursor()
 
-    # CUR.execute(""" 
-    #         CREATE TABLE IF NOT EXISTS "users" (
-    #             "user_ID"	    INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
-    #             "username"      TEXT NOT NULL UNIQUE,
-    #             "email"         TEXT NOT NULL UNIQUE,
-    #             "password"	    TEXT NOT NULL
-    #         );
-    # """)
-
     try:
         CUR.execute("INSERT INTO users (username, email, user_password) VALUES (?,?,?)",
                     [username, email, hashed_password])
@@ -85,7 +76,7 @@ def login():
     
     requestParsed = request.get_json()
     request_username = str(requestParsed["username"])
-    request_password = str(requestParsed["password"])
+    request_password = str(requestParsed["user_password"])
 
     connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
     CUR = connection.cursor()
@@ -116,12 +107,12 @@ def login():
         else:
             return jsonify({
                 "message": "wrong password or username"
-            }), 401
+            }), 200
     
     except TypeError:
         return jsonify({
                 "message": "wrong password or username"
-            }), 401
+            }), 200
 
 
 

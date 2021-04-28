@@ -84,7 +84,6 @@ export default function Register(props) {
 
         username: "",
         user_password: "",
-        email: ""
 
     });
 
@@ -102,9 +101,9 @@ export default function Register(props) {
 
         event.preventDefault();
 
-        API.post("cadastro", data).then(response => {
+        API.post("login", data).then(response => {
 
-            console.log(response.data)
+            localStorage.setItem("auth-token-access", response.data.access_token)
 
         })
     }
@@ -137,16 +136,7 @@ export default function Register(props) {
                     onChange={event => handleChange(event)}
                 />
 
-                <CssTextField
-                    label="EMAIL"
-                    variant="outlined"
-                    id="custom-css-outlined-input"
-                    className="inputs"
-                    onChange={event => handleChange(event)}
-                    name="email"
-                />
-
-                <SubmitButton type="submit" id="submit-button">Register</SubmitButton>
+                <SubmitButton type="submit" id="submit-button">Login</SubmitButton>
                 
             </form>
         </div>

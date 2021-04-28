@@ -1,5 +1,5 @@
-import LoginHeader from "../components/loginHeader/loginHeader"
-import Footer from "../components/footer/Footer"
+import LoginHeader from "../../components/loginHeader/loginHeader"
+import Footer from "../../components/footer/Footer"
 import React from "react"
 
 

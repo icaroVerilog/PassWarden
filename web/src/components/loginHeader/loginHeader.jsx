@@ -1,7 +1,7 @@
 import React from "react"
 import {  Link  } from "react-router-dom"
 import { ArrowForwardIos } from '@material-ui/icons';
-import Logo from "../../../assets/logo.png"
+import Logo from "../../assets/logo.png"
 import "./loginHeader.css"
 
 export default function LoginHeader(props){
