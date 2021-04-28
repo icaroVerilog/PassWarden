@@ -14,7 +14,7 @@ export default function Routes(props) {
                 <Route component={Home} path="/" exact={true}/>
                 <Route component={About} path="/sobre" exact={true}/>
                 <Route component={Register} path="/register" exact={true}/>
-                <Route component={Passwords} path="/passwords" exact={true}/>
+                <Route component={Passwords} path="/senhas" exact={true}/>
                 <Route component={Page404} path="*"></Route>
             </Switch>
         </BrowserRouter>
