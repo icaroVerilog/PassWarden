@@ -37,7 +37,6 @@ def home():
     elif (request.method == "GET"):
         return jsonify({"message": "main page"})
 
-
 @APP.route("/cadastro", methods = ["POST"])
 def usuario():
 
@@ -69,7 +68,7 @@ def usuario():
 
     except sqlite3.IntegrityError:
 
-        return jsonify({"message": "erro, usuário já cadastrado"}), 400
+        return jsonify({"message": "erro, usuário já cadastrado"}), 401
 
 @APP.route("/login", methods = ["POST"])
 def login():
@@ -114,19 +113,15 @@ def login():
                 "message": "wrong password or username"
             }), 200
 
-
-
-
 @APP.route("/senhas", methods = ["GET", "POST", "DELETE"])
 @jwt_required()
-
 def password():
     
     if (request.method == "POST"):
         requestParsed = request.get_json()
 
         #CONVERTENDO A VARIAVEL REQUESTPARSED PARA STRING, PORQUE INT NÃO É ITERAVEL
-        user_id = str(requestParsed["user_id"]);
+        user_id = str(requestParsed["user_id"])
         password = str(requestParsed["password"])
         description = str(requestParsed["description"])
 
@@ -139,7 +134,7 @@ def password():
         connection.close()
 
         
-        return json.dumps({"message": "senha cadastrada com sucesso", "password": password})
+        return jsonify({"message": "senha cadastrada com sucesso", "password": password})
 
 
     elif (request.method == "GET"):
@@ -151,8 +146,8 @@ def password():
         CUR = connection.cursor()
 
         CUR.execute("""
-                    SELECT * FROM passwords 
-                    INNER JOIN users ON passwords.user_ID = users.user_ID
+                    SELECT password, description FROM passwords
+                    LEFT JOIN users ON passwords.user_ID = users.user_ID
                     WHERE username = (?)
                     """, [username]
                     )
@@ -162,25 +157,25 @@ def password():
         connection.close()
 
 
-        return json.dumps({"message": "success", "data": DATA})
+        return jsonify({"message": "success", "data": DATA})
         
-@APP.route("/gerar-senha", methods = ["GET"])
+@APP.route("/gerar-senha", methods = ["POST"])
 def generatePassword():
 
     def getRandomPassword(length):
         letters = string.ascii_letters
         result_str = ''.join(random.choice(letters) for i in range(length))
 
-        return json.dumps({"password": result_str})   
+        return result_str  
 
     requestParced = request.get_json()
+    length = requestParced["length"]
 
-    print(request.data)
-    print(requestParced)
-    #length = int(requestParced["length"])
-    #passwordGenerated = getRandomPassword(requestParced["length"])
-    passwordGenerated = getRandomPassword(15)
-    return passwordGenerated
+    password = getRandomPassword(length)
+    print(password)
+
+    return jsonify({"message": "success", "password": password})
+    
 
 
 @APP.route("/sobre", methods = ["GET"])

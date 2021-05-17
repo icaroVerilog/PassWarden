@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import LoginHeader from "../../components/loginHeader/loginHeader"
 import Footer from "../../components/footer/Footer"
-import React from "react"
 
 
 import "./Styles.css"
@@ -8,6 +8,8 @@ import "./Styles.css"
 
 
 export default function Passwords(props) {
+
+    
 
     return (
 
