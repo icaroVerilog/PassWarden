@@ -82,7 +82,7 @@ export default function Home(props){
     }
 
     function getPassword() {
-        API.get("gerar-senha").then(response => {
+        API.post("gerar-senha").then(response => {
             
             setPassword(response.data.password)
 

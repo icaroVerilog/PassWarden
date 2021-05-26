@@ -77,6 +77,9 @@ def login():
     request_username = str(requestParsed["username"])
     request_password = str(requestParsed["user_password"])
 
+
+    print(request_username, request_username)
+
     connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
     CUR = connection.cursor()
 
@@ -140,8 +143,10 @@ def password():
     elif (request.method == "GET"):
 
         requestParsed = request.get_json()
-        username = requestParsed["username"]
-  
+
+        print(request.headers)
+
+        username = request.headers.get("username")
         connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
         CUR = connection.cursor()
 

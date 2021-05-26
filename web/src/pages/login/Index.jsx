@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import {  Link  } from "react-router-dom"
 import API from "../../services/API"
+import Axios from "axios"
 
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
@@ -100,12 +101,20 @@ export default function Register(props) {
     function handleSubmit(event){
 
         event.preventDefault();
-
-        API.post("login", data).then(response => {
+        
+        Axios({
+            method: "POST",
+            url: "http://localhost:5005/login",
+            data: data,
+        }).then(response => {
 
             localStorage.setItem("auth-token-access", response.data.access_token)
+            localStorage.setItem("username", data.username)
+            console.log(response.status)
+            console.log(response.data.message)
 
         })
+        
     }
 
     //console.log(data)
