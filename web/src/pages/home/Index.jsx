@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios"
 import API from "../../services/API"
 import Header from "../../components/header/Header"
@@ -78,7 +78,12 @@ export default function Home(props){
     const [password, setPassword] = useState("")
     const [passwordLenght, setPasswordLenght] = useState(4)
 
+    function handleSliderValue(value){
 
+        setPasswordLenght(value)
+        
+    }
+    
     function getPassword() {
 
         Axios({
@@ -95,14 +100,6 @@ export default function Home(props){
 
         })
     }
-
-
-    function handleSliderValue(value){
-
-        setPasswordLenght(value)
-        
-    }
-
 
     // Copia a senha para a área de transferencia
     function copyToClipboard() {

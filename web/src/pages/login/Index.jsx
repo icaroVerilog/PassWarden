@@ -86,8 +86,7 @@ export default function Register(props) {
         username: "",
         user_password: "",
 
-    });
-
+    })
     
     function handleChange(event){
 
@@ -120,12 +119,12 @@ export default function Register(props) {
     //console.log(data)
 
     return (
-        <div id="register-main" >
+        <div id="login-main" >
             <AnimatedBackground/>
             <Link to="/">
                 <img src={Bitwarden} id="main-link"/>
             </Link>
-            <form id="register-div" onSubmit={handleSubmit}>
+            <form id="login-div" onSubmit={handleSubmit}>
                 <Link></Link>
                 <CssTextField
                     label="USERNAME"

@@ -149,7 +149,7 @@ def password():
         CUR = connection.cursor()
 
         CUR.execute("""
-                    SELECT password, description FROM passwords
+                    SELECT password_id, password, description FROM passwords
                     LEFT JOIN users ON passwords.user_ID = users.user_ID
                     WHERE username = (?)
                     """, [username]
@@ -158,6 +158,7 @@ def password():
         DATA = CUR.fetchall()
         connection.commit()
         connection.close()
+        
 
 
         return jsonify({"message": "success", "data": DATA})

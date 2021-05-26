@@ -14,9 +14,36 @@
     position: relative;
     background-color: white;
 
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+
     width: 70%;
     height: 100%;
 
 }
+
+#password-ul {
+
+    width: 60vw;
+    
+
+}
+
+.password-li {
+
+    padding: 20px;
+
+
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color:rgb(221, 3, 61);
+}
+    
+
+
 
 

@@ -10,10 +10,10 @@
 #register-div {
 
     position: absolute;
-    left: 28%;
+    left: 30%;
     top: 25%;
 
-    width: 45%;
+    width: 70vh;
     height: 65%;
 
 
@@ -60,7 +60,7 @@
     position: relative;
     top: 15%;
 
-    width: 50%;
+    width: 70%;
 
 }
 
