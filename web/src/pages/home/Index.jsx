@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Axios from "axios"
-import API from "../../services/API"
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
 
@@ -110,7 +109,7 @@ export default function Home(props){
     }
 
     return (
-        <div>
+        <>
             <Header></Header>
             <div id="main">
                 <div id="introduce-text-div">
@@ -138,10 +137,7 @@ export default function Home(props){
                     />
                 </div>
             </div>
-            <div id="informations">
-                <img id="hacker-img" src={Hacker}></img>
-            </div>
             <Footer></Footer>
-        </div>      
+        </>      
     )
 }

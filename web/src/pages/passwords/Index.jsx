@@ -5,7 +5,8 @@ import Footer from "../../components/footer/Footer"
 
 
 import "./Styles.css"
-
+import DeleteIcon from '@material-ui/icons/Delete';
+import CreateIcon from '@material-ui/icons/Create';
 
 
 export default function Passwords(props) {
@@ -39,19 +40,24 @@ export default function Passwords(props) {
         <>
             <LoginHeader/>
             <div id="passwords-main-div">
-                <div id="passwords-content-div">
-                    
-                    <ul id="password-ul">
-                        {passwords.map(password => {
-                            return (
-                                <li key={password[0]} className="password-li">
-                                    <span>senha: {password[1]}</span>
-                                    <span>descrição: {password[2]}</span>  
-                                </li>   
-                            )
-                        })}
-                    </ul>
+                    <div id="new-password-div">
                 </div>
+                <ul id="password-ul">
+                    {passwords.map(password => {
+                        return (
+                            <li key={password[0]} className="password-li">
+                                <div id="password-content">
+                                    <span className="li-text">senha: {password[1]}</span>
+                                    <span className="li-text-description">{password[2]}</span>  
+                                </div>
+                                <div id="password-buttons">
+                                    <button className="action-button" id="delete-btn"><DeleteIcon></DeleteIcon></button>
+                                    <button className="action-button"><CreateIcon></CreateIcon></button>
+                                </div>
+                            </li>   
+                        )
+                    })}
+                </ul>
             </div>
             <Footer/>
         </>
