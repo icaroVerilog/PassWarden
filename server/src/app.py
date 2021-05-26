@@ -142,8 +142,6 @@ def password():
 
     elif (request.method == "GET"):
 
-        requestParsed = request.get_json()
-
         print(request.headers)
 
         username = request.headers.get("username")
@@ -173,8 +171,7 @@ def generatePassword():
 
         return result_str  
 
-    requestParced = request.get_json()
-    length = requestParced["length"]
+    length = request.json["length"]
 
     password = getRandomPassword(length)
     print(password)

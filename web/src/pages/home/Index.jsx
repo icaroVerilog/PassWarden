@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Axios from "axios"
 import API from "../../services/API"
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
@@ -77,17 +78,31 @@ export default function Home(props){
     const [password, setPassword] = useState("")
     const [passwordLenght, setPasswordLenght] = useState(4)
 
-    function handleSliderValue(value){
-        
-    }
 
     function getPassword() {
-        API.post("gerar-senha").then(response => {
-            
+
+        Axios({
+            method: "POST",
+            url: "http://localhost:5005/gerar-senha",
+            data: {
+                length: passwordLenght
+            },
+        }).then(response => {
+
+            console.log(response.status)
+            console.log(response.data)
             setPassword(response.data.password)
 
         })
     }
+
+
+    function handleSliderValue(value){
+
+        setPasswordLenght(value)
+        
+    }
+
 
     // Copia a senha para a área de transferencia
     function copyToClipboard() {
