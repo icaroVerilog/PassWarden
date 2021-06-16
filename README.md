@@ -18,8 +18,8 @@
   
 <div align=left>
 
-    
-    ## Objetivos
+  
+## Objetivos
    
   - [x] Gerar senhas de diferentes tamanhos
   - [ ] Habilitar a escolha de quais tipos de caracteres conterá a senha
