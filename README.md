@@ -23,6 +23,13 @@
 
 ## Tela de registro
 <img height="450em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-login.png" />
+  
+<br>
+<br>
+<br>
+
+## Tela de senhas
+<img height="450em" src="https://github.com/IcaroM-CdC/BitWarden/blob/master/images/BITWarden-passwords.png" />
 
 </div>
 
