@@ -9,6 +9,23 @@
 ### O BITwarden é um projeto **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. A idéia do projeto partiu da minha nescessidade de alguns amigos terem onde armazenar credenciais de diversos sites e aplicativos. Atualmente somente funcionalidades de gerar senha está implementada, espero que gostem. 
 
 
+  
+<div>
+  
+  ## Objetivos
+  
+  - [x] Gerar senhas de diferentes tamanhos
+  - [ ] Habilitar a escolha de quais tipos de caracteres conterá a senha
+  - [ ] Adicionar responsividade
+  - [ ] Implementar adição e deleção de senhas
+  - [ ] Implementar painel do usuário
+  - [ ] Implementar opção de tema
+  
+  
+  
+<div/>
+  
+  
 <br>
 <br>
 <br>
@@ -54,17 +71,3 @@
 
 <div/>
   
-<div>
-  
-  ## Objetivos
-  
-  - [x] Gerar senhas de diferentes tamanhos
-  - [ ] Habilitar a escolha de quais tipos de caracteres conterá a senha
-  - [ ] Adicionar responsividade
-  - [ ] Implementar adição e deleção de senhas
-  - [ ] Implementar painel do usuário
-  - [ ] Implementar opção de tema
-  
-  
-  
-<div/>
