@@ -53,3 +53,18 @@
 
 
 <div/>
+  
+<div>
+  
+  ## Objetivos
+  
+  - [x] Gerar senhas de diferentes tamanhos
+  - [ ] Habilitar a escolha de quais tipos de caracteres conterá a senha
+  - [ ] Adicionar responsividade
+  - [ ] Implementar adição e deleção de senhas
+  - [ ] Implementar painel do usuário
+  - [ ] Implementar opção de tema
+  
+  
+  
+<div/>
