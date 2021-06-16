@@ -18,11 +18,9 @@
   
 <div align=left>
 
-  <div align=center>
     
     ## Objetivos
     
-  <div/>
    
   
   - [x] Gerar senhas de diferentes tamanhos
