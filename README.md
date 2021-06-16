@@ -8,7 +8,8 @@
 
 ### O BITwarden é um projeto **Open Source** desenvolvido com o intuito de permitir que o usuário gere senhas seguras e gerencie credenciais. A idéia do projeto partiu da minha nescessidade de alguns amigos terem onde armazenar credenciais de diversos sites e aplicativos. Atualmente somente funcionalidades de gerar senha está implementada, espero que gostem. 
 
-
+<div/>
+  
   
 <div>
   
@@ -25,7 +26,8 @@
   
 <div/>
   
-  
+<div align=center>
+
 <br>
 <br>
 <br>
@@ -50,10 +52,9 @@
 
 </div>
 
-
-<div>
   
-
+  
+<div>
 ## Tecnologias
 
 #### BackEnd ([Python](https://www.python.org/) + [Flask](https://flask.palletsprojects.com/en/1.1.x/))
@@ -67,7 +68,5 @@
 - Material UI
 - Axios
 - React-tsparticles
-
-
 <div/>
   
