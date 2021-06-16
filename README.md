@@ -13,7 +13,9 @@
   
 <div align=left>
   
-  ## Objetivos
+  <h1 align=center>
+    ## Objetivos
+  </h1>
   
   - [x] Gerar senhas de diferentes tamanhos
   - [ ] Habilitar a escolha de quais tipos de caracteres conterá a senha
@@ -55,6 +57,7 @@
   
   
 <div>
+  
 ## Tecnologias
 
 #### BackEnd ([Python](https://www.python.org/) + [Flask](https://flask.palletsprojects.com/en/1.1.x/))
