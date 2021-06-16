@@ -18,8 +18,10 @@
   
 <div align=left>
 
-  
+
+<h1 align=center>
 ## Objetivos
+<div/>
    
   - [x] Gerar senhas de diferentes tamanhos
   - [ ] Habilitar a escolha de quais tipos de caracteres conterá a senha
