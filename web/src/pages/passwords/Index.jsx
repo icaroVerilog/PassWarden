@@ -40,7 +40,8 @@ export default function Passwords(props) {
         <>
             <LoginHeader/>
             <div id="passwords-main-div">
-                    <div id="new-password-div">
+                <div id="new-password-div">
+                    
                 </div>
                 <ul id="password-ul">
                     {passwords.map(password => {
