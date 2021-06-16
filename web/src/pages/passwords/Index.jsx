@@ -7,6 +7,7 @@ import Footer from "../../components/footer/Footer"
 import "./Styles.css"
 import DeleteIcon from '@material-ui/icons/Delete';
 import CreateIcon from '@material-ui/icons/Create';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 
 export default function Passwords(props) {
@@ -41,7 +42,11 @@ export default function Passwords(props) {
             <LoginHeader/>
             <div id="passwords-main-div">
                 <div id="new-password-div">
-                    
+                    <div id="input-div">
+                        <input className="password-input" type="text" placeholder="senha"/>
+                        <input className="password-input" type="text" placeholder="descrição"/>
+                    </div>
+                    <button id="new-password-button"><AddCircleOutlineIcon></AddCircleOutlineIcon></button>
                 </div>
                 <ul id="password-ul">
                     {passwords.map(password => {

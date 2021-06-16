@@ -166,15 +166,22 @@ def password():
 @APP.route("/gerar-senha", methods = ["POST"])
 def generatePassword():
 
-    def getRandomPassword(length):
-        letters = string.ascii_letters
-        result_str = ''.join(random.choice(letters) for i in range(length))
+    def random_password(length):
 
-        return result_str  
+        lowercase = "abcdefghijklmnopqrstuvwxyz"
+        uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        numbers = "123456789"
+        symbols = "[]{}()+-!@#$%&*\/_="
+
+        all = lowercase + uppercase + numbers + symbols
+
+        password = "".join(random.sample(all, length))
+
+        return password
 
     length = request.json["length"]
 
-    password = getRandomPassword(length)
+    password = random_password(length)
     print(password)
 
     return jsonify({"message": "success", "password": password})
