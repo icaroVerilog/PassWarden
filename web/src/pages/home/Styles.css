@@ -124,6 +124,10 @@
 
 }
 
+#last-answer {
+    margin-bottom: 100px;
+}
+
 .questions-text{
 
     color: #9FEF00;
@@ -139,12 +143,9 @@
 .answer-text {
 
     color: #a4b2ca;
-
     font-size:2.7vh;
     font-family: 'Orbitron', sans-serif;    
-
     text-align: center;
-
     width: 50%;
 
 }

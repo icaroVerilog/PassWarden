@@ -93,8 +93,8 @@ export default function Home(props){
             },
         }).then(response => {
 
-            console.log(response.status)
-            console.log(response.data)
+            // console.log(response.status)
+            // console.log(response.data)
             setPassword(response.data.password)
 
         })
@@ -148,12 +148,10 @@ export default function Home(props){
                     Senhas boas são longas, realmente longas (pense acima de 16 caracteres) e aleatórias. 
                 </h2>
                 <h1 className="questions-text"> Eu preciso de uma senha exclusiva para cada conta?</h1>
-                <h2 className="answer-text">
+                <h2 className="answer-text" id="last-answer">
                     Sim! Utilizar a mesma senha em várias contas é algo que não deve ser feito. 
                     Se cibercriminosos obtiverem a senha de uma das suas contas, eles também terão a senha de todas as outras contas. 
-                    Portanto, nunca recicle senhas. Use senhas diferentes e exclusivas para cada conta. 
-                    (Também não basta adicionar um ponto de exclamação ou outro caráter no fim de uma senha para a tornar exclusiva ou forte. 
-                    Os cibercriminosos conseguem decifrar facilmente esse tipo de variações de senha.
+                    Portanto, nunca recicle senhas. Use senhas diferentes e exclusivas para cada conta.
                 </h2>
                 {/* <h1 className="questions-text"> Quais são as piores senhas?</h1>
                 <h2 className="answer-text">
