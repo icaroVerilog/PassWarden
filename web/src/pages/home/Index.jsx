@@ -137,6 +137,29 @@ export default function Home(props){
                     />
                 </div>
             </div>
+            <div id="about-div">
+                <h1 className="questions-text"> Porque utilizar um gerador de senhas?</h1>
+                <h2 className="answer-text">
+                    As pessoas não são boas para gerar senhas aleatórias. Elas usam palavras ou números que significam alguma coisa para elas: 
+                    um nome de animal de estimação, letras de música, etc. O resultado é senhas fáceis de adivinhar, o que é um problema.
+                </h2>
+                <h1 className="questions-text"> O que torna uma senha forte?</h1>
+                <h2 className="answer-text">
+                    Senhas boas são longas, realmente longas (pense acima de 16 caracteres) e aleatórias. 
+                </h2>
+                <h1 className="questions-text"> Eu preciso de uma senha exclusiva para cada conta?</h1>
+                <h2 className="answer-text">
+                    Sim! Utilizar a mesma senha em várias contas é algo que não deve ser feito. 
+                    Se cibercriminosos obtiverem a senha de uma das suas contas, eles também terão a senha de todas as outras contas. 
+                    Portanto, nunca recicle senhas. Use senhas diferentes e exclusivas para cada conta. 
+                    (Também não basta adicionar um ponto de exclamação ou outro caráter no fim de uma senha para a tornar exclusiva ou forte. 
+                    Os cibercriminosos conseguem decifrar facilmente esse tipo de variações de senha.
+                </h2>
+                {/* <h1 className="questions-text"> Quais são as piores senhas?</h1>
+                <h2 className="answer-text">
+                    
+                </h2> */}
+            </div>
             <Footer></Footer>
         </>      
     )
