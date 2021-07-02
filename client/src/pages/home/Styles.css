@@ -1,0 +1,151 @@
+#main {
+
+    width: 100%;
+    height: 100vh;
+    background-color:#141D2B;
+
+}
+#introduce-text-div {
+
+    position: relative;
+    background-color:#141D2B;
+
+    width: 100%;
+    height: 30%;
+
+    padding-top: 1px;
+
+    max-width: 80%;
+
+    position: relative;
+    top: 5%;
+    left: 9%;
+
+
+}
+
+#introduce-text {
+
+    color: #9FEF00;
+
+    font-size:6vh;
+    font-family: 'Orbitron', sans-serif;    
+
+    text-align: center;
+
+}
+
+#password-generator {
+    background-color:#141D2B;
+
+
+    width: 100%;
+    height: 50%;
+
+    position: relative;
+    top: 0%;
+}
+
+#output-box {
+
+    position: relative;
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    height: 70%;
+
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.8rem;
+
+    color: #9FEF00;
+    text-align: left;
+
+    background-color:aliceblue;
+    border: 1px solid aliceblue;
+
+}
+
+#output-box-div {
+
+    display: flex;
+    position: relative;
+    top: 20%;
+    left: 25%;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: 25%;
+
+    min-width: 50%;
+    min-height: 25%;
+
+    border: 3px solid #111927;
+    border-radius: 8px;
+    background-color:aliceblue;
+
+
+}
+
+#output-box-icons {
+
+    position: relative;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+#informations {
+
+    position: relative;
+    top: 20%;
+
+    width: 100%;
+    height: 105vh;
+
+    background-color:black;
+
+}
+
+#about-div {
+
+    background-color:#111927;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+
+}
+
+#last-answer {
+    margin-bottom: 100px;
+}
+
+.questions-text{
+
+    color: #9FEF00;
+    font-size:3.5vh;
+    font-family: 'Orbitron', sans-serif;    
+
+    text-align: center;
+    margin-top: 70px;
+    
+
+}
+
+.answer-text {
+
+    color: #a4b2ca;
+    font-size:2.7vh;
+    font-family: 'Orbitron', sans-serif;    
+    text-align: center;
+    width: 50%;
+
+}

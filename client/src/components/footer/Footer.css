@@ -1,0 +1,67 @@
+#footer {
+
+    background-color: #9FEF00;
+    width: 100%;
+    height: auto;
+    padding-top: 1px;
+    
+
+}
+
+#footer-text {
+
+    position: relative;
+
+    bottom: -50%;
+    left: 70%;
+
+    font-size:large;
+    font-family: 'Orbitron', sans-serif;
+    color: #111927;
+
+    max-width: 350px;
+
+}
+
+#links {
+
+    width: 8%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+    padding-bottom: 50px;
+
+
+}
+
+#github {
+
+    width: 60%;
+    height: 60%;
+    color:#141D2B;
+
+}
+
+#linked-in {
+
+    width: 75%;
+    height: 75%;
+    color:#141D2B;
+
+
+}
+
+.social-links {
+    width: 65%;
+    height: 65%;
+}
+
+
+span {
+
+    color: #3B007A;
+
+}

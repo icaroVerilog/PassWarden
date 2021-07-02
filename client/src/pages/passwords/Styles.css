@@ -1,0 +1,150 @@
+#passwords-main-div {
+
+    width: 100%;
+    height: 100%;
+    background-color: #141D2B;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#password-ul {
+
+    width: 60vw;
+    height: auto;
+    position: relative;
+    background-color:#111927;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+#password-content {
+
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+    max-width: 80%;
+
+}
+
+#password-buttons {
+
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    
+    align-items: center;
+    
+    
+
+}
+
+#delete-btn {
+    color: red;
+}
+
+#new-password-div {
+    
+    width: 62vw;
+    height: 200px;
+    background-color:#111927;
+    display: flex;
+    flex-direction: row;
+    padding-top: 5%;
+
+    margin-bottom: 1.5%;
+    margin-top: 2%;
+
+}
+
+#input-div {
+
+    position: relative;
+    top: -20%;
+
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 80%;
+    margin-left: 5%;
+
+
+}
+
+#new-password-button {
+
+    width: 100px;
+    height: 100px;
+
+    margin-bottom: 3%;
+    margin-left: 5%;
+
+}
+
+.password-input {
+
+    display: flex;
+
+    width: 90%;
+    height: 60%;
+    margin-bottom: 10px;
+
+    background-color: #141d2b;
+    text-decoration: none;
+    border: 10px;
+    border-color: blue;
+
+    color: #9FEF00;
+    font-family: 'Orbitron', sans-serif;  
+    font-size: 3vh;
+
+}
+
+.password-li {
+
+    padding: 20px;
+    position: relative;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border: 1px solid;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    background-color:#141D2B;
+}
+
+.li-text {
+    color: #9FEF00;
+    font-family: 'Orbitron', sans-serif;  
+    font-size: 3vh;
+}
+
+.li-text-description {
+    color: #9FEF00;
+    font-family: 'Orbitron', sans-serif;  
+    font-size: 1.5vh;
+
+    position: relative;
+    padding-top: 20px;
+}
+
+.action-button {
+    margin: 5px;
+    width: 4vw;
+    height: 4vw;
+}
+
+
+    
+
+
+
+
