@@ -40,11 +40,16 @@
   
 ## 🎲 Rodando a aplicação
 
-### Backend
-
-1. Clone o repositório
 ```bash
+# Clone o repositório
 git clone https://github.com/IcaroM-CdC/BitWarden.git
+```
+
+### Backend	
+```bash
+cd server/src
+	
+python3 app.py
 ```
 	
 	
