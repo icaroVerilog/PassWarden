@@ -41,14 +41,15 @@
 ## 🎲 Rodando a aplicação
 
 	
-	# Clone o repositório
+	# clone o repositório
 	git clone https://github.com/IcaroM-CdC/BitWarden.git
 	
 
 ### Backend	
-	
+	# acesse o diretório
 	cd server/src
-
+	
+	# execute a aplicação
 	python3 app.py
 	
 ### Frontend
