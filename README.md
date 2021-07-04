@@ -54,6 +54,8 @@
 	# execute a aplicação
 	python3 app.py
 	
+	# a aplicação irá rodar no endereço http://localhost:5005
+	
 ### Frontend
 	
 	# acesse o diretório
@@ -64,6 +66,8 @@
 	
 	# execute a aplicação
 	npm start
+	
+	# a aplicação irá rodar no endereço http://localhost:3000
 	
 
 	
