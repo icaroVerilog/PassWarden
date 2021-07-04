@@ -46,12 +46,23 @@ git clone https://github.com/IcaroM-CdC/BitWarden.git
 ```
 
 ### Backend	
-```bash
-cd server/src
+	```bash
+	cd server/src
+
+	python3 app.py
+	```
+### Frontend
+	```bash
+	# acesse o diretório
+	cd client
+
+	# instale as dependencias
+	npm install
 	
-python3 app.py
-```
-	
+	# execute a aplicação
+	npm start
+	```
+
 	
 <div/>
 	
