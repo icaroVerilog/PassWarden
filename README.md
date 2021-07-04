@@ -40,10 +40,10 @@
   
 ## 🎲 Rodando a aplicação
 
-```bash
-# Clone o repositório
-git clone https://github.com/IcaroM-CdC/BitWarden.git
-```
+	```bash
+	# Clone o repositório
+	git clone https://github.com/IcaroM-CdC/BitWarden.git
+	```
 
 ### Backend	
 	```bash
