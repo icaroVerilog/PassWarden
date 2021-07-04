@@ -34,9 +34,15 @@
   - [ ] Implementar opção de tema
   
 
-  
 <div/>
+	
+<div align=left>
   
+	### Rodando a aplicação
+	
+	
+<div/>
+	
 <div align=center>
 
 <br>
