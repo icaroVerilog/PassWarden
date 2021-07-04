@@ -67,7 +67,7 @@
 	# execute a aplicação
 	npm start
 	
-	# a aplicação irá rodar no endereço http://localhost:3000
+	# a aplicação irá rodar no endereço (http://localhost:3000)[http://localhost:3000/]
 	
 
 	
