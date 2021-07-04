@@ -40,7 +40,7 @@
 	
 <div align=left>
   
-## 🎲 Rodando a aplicação
+## ::rocket:: Rodando a aplicação
 
 	
 	# clone o repositório
