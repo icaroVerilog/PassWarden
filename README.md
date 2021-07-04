@@ -40,19 +40,19 @@
   
 ## 🎲 Rodando a aplicação
 
-	```
+	
 	# Clone o repositório
 	git clone https://github.com/IcaroM-CdC/BitWarden.git
-	```
+	
 
 ### Backend	
-	```
+	
 	cd server/src
 
 	python3 app.py
-	```
+	
 ### Frontend
-	```
+	
 	# acesse o diretório
 	cd client
 
@@ -61,7 +61,7 @@
 	
 	# execute a aplicação
 	npm start
-	```
+	
 
 	
 <div/>
