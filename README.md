@@ -33,7 +33,28 @@
   - [ ] Implementar painel do usuário
   - [ ] Implementar opção de tema
   
-  
+	  ```bash
+	### Pré-requisitos
+
+	### 🎲 Rodando o Back End (servidor)
+
+	```bash
+	# Clone este repositório
+	$ git clone <https://github.com/IcaroM-CdC/BitWarden.git>
+
+	# Acesse a pasta do projeto no terminal/cmd
+	$ cd BitWarden
+
+	# Vá para a pasta server
+	$ cd server/src
+
+	# Execute a aplicação
+	$ python3 app.py
+
+
+	# O servidor inciará na porta:5005 - acesse <http://localhost:5005>
+	```
+	```
   
 <div/>
   
