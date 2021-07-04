@@ -38,7 +38,7 @@
 	
 <div align=left>
   
-	### Rodando a aplicação
+### Rodando a aplicação
 	
 	
 <div/>
