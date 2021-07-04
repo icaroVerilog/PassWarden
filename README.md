@@ -23,7 +23,7 @@
 <div align=left>
 
 
-## Objetivos
+## :man_technologist: Objetivos
 
    
   - [x] Gerar senhas de diferentes tamanhos
@@ -100,7 +100,7 @@
   
 <div>
   
-## Tecnologias ::computer::
+## Tecnologias :computer:
 
 #### BackEnd ([Python](https://www.python.org/) + [Flask](https://flask.palletsprojects.com/en/1.1.x/))
 
