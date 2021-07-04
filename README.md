@@ -40,7 +40,7 @@
 	
 <div align=left>
   
-## ::rocket:: Rodando a aplicação
+## 🚀 Rodando a aplicação
 
 	
 	# clone o repositório
@@ -100,7 +100,7 @@
   
 <div>
   
-## Tecnologias
+## Tecnologias ::computer::
 
 #### BackEnd ([Python](https://www.python.org/) + [Flask](https://flask.palletsprojects.com/en/1.1.x/))
 
