@@ -2,16 +2,13 @@ import React, { useState, useEffect } from "react";
 import Axios from "axios"
 import Header from "../../components/header/Header"
 import Footer from "../../components/footer/Footer"
-
-import Hacker from "../../assets/hacker.jpg"
-import "./Styles.css";
-
-
 import Slider from '@material-ui/core/Slider';
+
 import { withStyles } from '@material-ui/core/styles';
 import InsertDriveFileOutlined from '@material-ui/icons/InsertDriveFileOutlined';
 import RefreshIcon from '@material-ui/icons/Refresh';
 
+import "./Styles.css";
 
 const CustomSlider = withStyles({
 
@@ -96,12 +93,11 @@ export default function Home(props){
             method: "POST",
             url: "http://localhost:5005/gerar-senha",
             data: {
-                length: passwordLenght
+                length: passwordLenght,
+                type: "all"
             },
         }).then(response => {
 
-            // console.log(response.status)
-            // console.log(response.data)
             setPassword(response.data.password)
 
         })
@@ -160,10 +156,6 @@ export default function Home(props){
                     Se cibercriminosos obtiverem a senha de uma das suas contas, eles também terão a senha de todas as outras contas. 
                     Portanto, nunca recicle senhas. Use senhas diferentes e exclusivas para cada conta.
                 </h2>
-                {/* <h1 className="questions-text"> Quais são as piores senhas?</h1>
-                <h2 className="answer-text">
-                    
-                </h2> */}
             </div>
             <Footer></Footer>
         </>      

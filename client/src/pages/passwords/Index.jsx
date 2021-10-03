@@ -5,10 +5,55 @@ import Footer from "../../components/footer/Footer"
 
 
 import "./Styles.css"
-import DeleteIcon from '@material-ui/icons/Delete';
-import CreateIcon from '@material-ui/icons/Create';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import withStyles from '@material-ui/core/styles/withStyles'
+import TextField from '@material-ui/core/TextField'
+import DeleteIcon from '@material-ui/icons/Delete'
+import CreateIcon from '@material-ui/icons/Create'
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline'
 
+const OutputTextField = withStyles({
+    root: {
+        '& .MuiInputBase-root': {
+            color: 'white', // Cor do texto do input
+        },
+        '& label.Mui-focused': {
+            color: '#9FEF00', // Cor da tarja quando focada
+            fontFamily: [ "Orbitron"  ],
+            fontSize: "20px",
+        },
+        '& label': {
+            color: '#9FEF00', // Cor da tarja
+            fontFamily: [ "Orbitron"  ],
+            fontSize: "20px",
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: '#141D2B',
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: "#9FEF00", // Cor da borda padrão
+            },
+            '&:hover fieldset': {
+                borderColor: "#9FEF00",
+            },
+            '&.Mui-focused fieldset': {
+                borderColor: '#9FEF00',
+            },
+
+        backgroundColor: "#141D2B", // Cor de fundo
+        
+        fontFamily: [ "Orbitron"  ],
+        height: "100%",
+        fontSize: "20px"
+        },
+        
+        height: "75px",
+        marginTop: "25px",
+        marginBottom: "25px",
+        fontFamily: [ "Orbitron"  ],
+
+    },
+})(TextField);
 
 export default function Passwords(props) {
 
@@ -53,13 +98,13 @@ export default function Passwords(props) {
                         return (
                             <li key={password[0]} className="password-li">
                                 <div id="password-content">
-                                    <span className="li-text">senha: {password[1]}</span>
-                                    <span className="li-text-description">{password[2]}</span>  
+                                    <OutputTextField value={password[1]} inputProps={{readOnly: true}} variant="outlined" label={"senha"}/>
+                                    <OutputTextField value={password[2]} inputProps={{readOnly: true}} variant="outlined" label={"descrição"}/>
                                 </div>
-                                <div id="password-buttons">
+                                {/* <div id="password-buttons">
                                     <button className="action-button" id="delete-btn"><DeleteIcon></DeleteIcon></button>
                                     <button className="action-button"><CreateIcon></CreateIcon></button>
-                                </div>
+                                </div> */}
                             </li>   
                         )
                     })}

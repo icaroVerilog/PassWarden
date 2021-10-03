@@ -11,7 +11,8 @@ import random
 import string
 import json
 
-
+#TODO REVISAR NOMES DE VARIÁVEIS
+#TODO refletir sobre usar um ORM no caso o sqlalchemy
 
 APP = Flask(__name__)
 
@@ -41,18 +42,12 @@ def home():
 def usuario():
 
     requestParsed = request.get_json()
-    
-    print("############################")
-    print(requestParsed)
-    print("############################")
 
     username = str(requestParsed["username"])
     password = str(requestParsed["user_password"])
     email = str(requestParsed["email"])
 
     hashed_password = sha256_crypt.hash(password)
-
-
 
     connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
     CUR = connection.cursor()
@@ -74,14 +69,14 @@ def usuario():
 def login():
     
     requestParsed = request.get_json()
+    print (requestParsed)
     request_username = str(requestParsed["username"])
     request_password = str(requestParsed["user_password"])
 
-
-    print(request_username, request_username)
-
     connection = sqlite3.connect("../database/DB-PasswordGenerator.sqlite")
     CUR = connection.cursor()
+
+    print("############# passou ###############")
 
     try:
 
@@ -90,15 +85,15 @@ def login():
         connection.commit()
         connection.close()
 
+        print(data)
+
         id = data[0]
         username = data[1]
         email = data[2]
         password = data[3]
 
-
         if (sha256_crypt.verify(request_password, password)):
-
-            access_token = create_access_token(identity = id)
+            access_token = create_access_token(identity = username)
 
             return jsonify({
                 "ID": id,
@@ -114,7 +109,7 @@ def login():
     except TypeError:
         return jsonify({
                 "message": "wrong password or username"
-            }), 200
+        }), 200
 
 @APP.route("/senhas", methods = ["GET", "POST", "DELETE"])
 @jwt_required()
@@ -123,7 +118,7 @@ def password():
     if (request.method == "POST"):
         requestParsed = request.get_json()
 
-        #CONVERTENDO A VARIAVEL REQUESTPARSED PARA STRING, PORQUE INT NÃO É ITERAVEL
+        #CONVERTENDO A VARIAVEL REQUESTPARSED PARA STRING, PORQUE INT NÃO É ITERAVEL 
         user_id = str(requestParsed["user_id"])
         password = str(requestParsed["password"])
         description = str(requestParsed["description"])
@@ -159,29 +154,45 @@ def password():
         connection.commit()
         connection.close()
         
-
-
         return jsonify({"message": "success", "data": DATA})
+
+    #TODO Criar a função de deletar senha
+
+    elif (request.method == "DELETE"):
+        pass
         
 @APP.route("/gerar-senha", methods = ["POST"])
 def generatePassword():
 
-    def random_password(length):
+    def random_password(length, type = "all"):
 
         lowercase = "abcdefghijklmnopqrstuvwxyz"
         uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        numbers = "123456789"
-        symbols = "[]{}()+-!@#$%&*\/_="
+        numbers = "0123456789"
+        symbols = "[]{}()+-!@#$%&*\/_<>;:|="
+        
+        if (type == "all"):
+            characters = lowercase + uppercase + numbers + symbols
+            password = "".join(random.sample(characters, length))
 
-        all = lowercase + uppercase + numbers + symbols
+            return password
 
-        password = "".join(random.sample(all, length))
+        elif (type == "only_letters"):
+            characters = lowercase + uppercase
+            password = "".join(random.sample(characters, length))
 
-        return password
+            return password
+
+        elif (type == "only_numbers"):
+            characters = numbers
+            password = "".join(random.sample(characters, length))
+
+            return password
 
     length = request.json["length"]
+    type = request.json["type"]
 
-    password = random_password(length)
+    password = random_password(length, type)
     print(password)
 
     return jsonify({"message": "success", "password": password})

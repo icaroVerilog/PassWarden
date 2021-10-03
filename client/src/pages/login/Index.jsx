@@ -5,7 +5,7 @@ import Axios from "axios"
 
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import { withStyles } from '@material-ui/core/styles';
+import withStyles from '@material-ui/core/styles/withStyles'
 import Bitwarden from "../../assets/Bitwarden.png"
 
 import AnimatedBackground from "../../components/backgroundAnimation/Animation"
