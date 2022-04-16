@@ -1,5 +1,4 @@
 import React from "react"
-import Robot from "../../assets/robot404.png"
 
 import "./404.css"
 
