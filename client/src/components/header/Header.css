@@ -6,9 +6,8 @@
     width: 100%;
     height: 12vh;
 
-    min-height: 120px;
+    /* min-height: 120px; */
 }
-
 
 #header-logo-wrapper {
     display: flex;
@@ -20,25 +19,51 @@
 }
 
 #header-logo {
-    width: 90%;
-    height: 85%;
+    width: 75%;
+    height: 70%;
 }
 
-#about {
-
-    color: #9FEF00;
-    position:relative;
-    left: 45%;
-    top: -15%;
-
-    font-size:x-large;
-    font-family: 'Orbitron', sans-serif;
-
-
-    text-decoration: none;
-
-
+@media (max-width: 1366px) {
+    #header-logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        width: 30%;
+        height: 100%;
+    }
+    
+    #header-logo {
+        width: 75%;
+        height: 60%;
+    }
 }
 
+@media (max-width: 900px) {
+    #header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    
+        background-color:#111927;
+        width: 100%;
+        height: 10vh;
+    }
+    
+    #header-logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        width: 75%;
+        height: 100%;
 
-@media (max-width:850px){ .header-links{ visibility: hidden; } }
+        background-color:#111927;
+    }
+    
+    #header-logo {
+        width: 90%;
+        height: 70%;
+    }
+}

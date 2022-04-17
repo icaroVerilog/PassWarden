@@ -15,9 +15,6 @@ const CustomSlider = withStyles({
     root: {
         color: "#F0F8FF",
 
-        position: "relative",
-        top: "50%",
-        left: "28%",
         width: "45%",
         height: "10px",
     },
@@ -136,7 +133,8 @@ export default function Home(props){
                         step={1}
                         marks
                         min={4}
-                        max={15}     
+                        max={15}
+                        id="slider"
                     />
                 </div>
             </div>
