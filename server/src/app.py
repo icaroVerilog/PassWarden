@@ -198,11 +198,5 @@ def generatePassword():
     return jsonify({"message": "success", "password": password})
     
 
-
-@APP.route("/sobre", methods = ["GET"])
-def about():
-    return jsonify({"message": "Feito por Ícaro Moreira"})
-
-
 if (__name__ == "__main__"):
     APP.run(debug=True, port=5005)
